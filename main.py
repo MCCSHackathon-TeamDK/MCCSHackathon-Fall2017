@@ -43,5 +43,27 @@ def generate_gift_list(people, year_given, price_limit):
 
     return result
 
+def generate_children(people):
+    result = list()
+    for person in people:
+        if person.relationship == "brother" or person.relationship == "sister":
+            for relative in person.family:
+                if relative == "child":
+                    result.append(relative)
+
+def search(term, people):
+    result = list()
+    for person in people:
+        if term in person.name or term in person.relationship:
+            result.append(person)
+        for interest in person.interests:
+            if term in interest:
+                result.append(person)
+        for gift in person.gifts:
+            if term in gift.name:
+                result.append(gift)
+            elif term.isdigit() and term == gift.year or term == gift.price:
+                result.append(gift)
+
 if __name__ == "__main__":
     main()
