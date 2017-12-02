@@ -47,9 +47,16 @@ class GiftGudGUI:
         self.gifts_from_list = self.builder.get_object("gifts_from_list")
         self.family_list = self.builder.get_object("family_list")
 
+        self.edit_button = self.builder.get_object("edit_button")
+        self.edit_button.configure(command=self.gui_edit_object)
+
         self.gui_show_person()
 
         root.mainloop()
+
+    def gui_edit_object(self):
+        self.interest_list.insert(END, "ba da boom")
+        pass
 
     def gui_add_person(self):
         pass
@@ -81,6 +88,11 @@ class GiftGudGUI:
         pass
 
     def save_people(self, people):
+        """
+        Saves the people to files
+        :param people: List of people to save
+        :return: None
+        """
         if not os.path.exists("people"):
             os.mkdir("people")
 
@@ -88,6 +100,14 @@ class GiftGudGUI:
             person.save_person("people")
 
     def load_people(self, people):
+        """
+        Loads the people files from a previous session if they exist
+        :param people: people list to put data into
+        :return: None
+        """
+        if not os.path.exists("people"):
+            return
+
         for file in os.listdir("people"):
             people.append(Person("people/" + file))
 
