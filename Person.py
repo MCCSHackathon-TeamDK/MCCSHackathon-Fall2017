@@ -12,7 +12,7 @@ class Person:
         :param age: Age of this person
         :param relationship: Relationship of this person to the user
         """
-        if age is None or relationship is None:
+        if age is not None and relationship is not None:
             self.name = name
             self.age = age
             self.relationship = relationship
@@ -21,7 +21,7 @@ class Person:
             self.interests = []
             self.family = []  # List of tuples (relationship to this person, their person object)
         else:
-
+            self.load_person(name)
 
     def save_person(self):
         """
@@ -33,6 +33,14 @@ class Person:
 
     def load_person(self, name):
         json_dict = json.load(name)
+
+        self.name = json_dict["name"]
+        self.age = int(json_dict["age"])
+        self.relationship = json_dict["relationship"]
+        self.no_gift_rule = json_dict["no_gift_rule"]
+        self.gifts = json_dict["gifts"]  # TODO make sure this loads the gift class correctly
+        self.interests = json_dict["interests"]
+        self.family = json_dict["family"]  # TODO get this to work with linking to people
 
     def add_family_member(self, role, person):
         """
