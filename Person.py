@@ -29,18 +29,19 @@ class Person:
         :return:
         """
         with open(self.name + '.txt', 'w') as outfile:
-            json.dump(self, outfile)
+            json.dump(self.__dict__, outfile)
 
     def load_person(self, name):
-        json_dict = json.load(name)
+        with open(name + ".txt") as json_file:
+            json_dict = json.load(json_file)
 
-        self.name = json_dict["name"]
-        self.age = int(json_dict["age"])
-        self.relationship = json_dict["relationship"]
-        self.no_gift_rule = json_dict["no_gift_rule"]
-        self.gifts = json_dict["gifts"]  # TODO make sure this loads the gift class correctly
-        self.interests = json_dict["interests"]
-        self.family = json_dict["family"]  # TODO get this to work with linking to people
+            self.name = json_dict["name"]
+            self.age = int(json_dict["age"])
+            self.relationship = json_dict["relationship"]
+            self.no_gift_rule = json_dict["no_gift_rule"]
+            self.gifts = json_dict["gifts"]  # TODO make sure this loads the gift class correctly
+            self.interests = json_dict["interests"]
+            self.family = json_dict["family"]  # TODO get this to work with linking to people
 
     def add_family_member(self, role, person):
         """
