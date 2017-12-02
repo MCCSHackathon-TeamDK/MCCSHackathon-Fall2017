@@ -57,6 +57,16 @@ class GiftGudGUI:
         self.next_button = self.builder.get_object("next_button")
         self.next_button.configure(command=self.gui_add_interest)
 
+        # Add interest toplevel config
+        self.interest_toplevel = self.builder.get_object("add_interest_toplevel")
+        add_interest_save_button = self.builder.get_object("add_interest_done_button")
+        add_interest_save_button.configure(command=self.gui_add_interest)
+        add_interest_cancel_button = self.builder.get_object("add_interest_cancel_button")
+        add_interest_cancel_button.configure(command=self.interest_toplevel.withdraw)
+        add_interest_button = self.builder.get_object("add_interest_button")
+        add_interest_button.configure(command=self.interest_toplevel.deiconify)
+        self.add_interest_entry_text = self.builder.get_variable("add_interest_entry_text")
+
         self.gui_show_person()
 
         root.mainloop()
@@ -115,8 +125,10 @@ class GiftGudGUI:
         pass
 
     def gui_add_interest(self):
-        self.interest_list.insert(END, "ba da boom")
-        self.edited_interests.append("ding ding")
+        interest_text = self.add_interest_entry_text.get()
+        self.edited_interests.append(interest_text)
+        self.interest_list.insert(END, interest_text)
+        self.interest_toplevel.withdraw()
 
     def save_people(self, people):
         """

@@ -146,6 +146,16 @@
             </layout>
           </object>
         </child>
+        <child>
+          <object class="ttk.Button" id="add_interest_button">
+            <property name="text" translatable="yes">Add Interest</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
       </object>
     </child>
     <child>
@@ -175,6 +185,16 @@
               <property name="column">0</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="add_gift_button">
+            <property name="text" translatable="yes">Add Gift From</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
             </layout>
           </object>
         </child>
@@ -210,6 +230,16 @@
             </layout>
           </object>
         </child>
+        <child>
+          <object class="ttk.Button" id="gift_to_button">
+            <property name="text" translatable="yes">Add Gift To</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
       </object>
     </child>
     <child>
@@ -239,6 +269,16 @@
               <property name="column">0</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="add_family_button">
+            <property name="text" translatable="yes">Add Family</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
             </layout>
           </object>
         </child>
@@ -280,6 +320,80 @@
             <property name="text" translatable="yes">Next</property>
             <layout>
               <property name="column">2</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="tk.Toplevel" id="add_interest_toplevel">
+    <property name="height">200</property>
+    <property name="width">200</property>
+    <child>
+      <object class="ttk.Frame" id="interest_entry_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="add_interest_label">
+            <property name="text" translatable="yes">Interest:</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="add_interest_entry">
+            <property name="text" translatable="yes">Entry_7</property>
+            <property name="textvariable">string:add_interest_entry_text</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="buttons_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+        <child>
+          <object class="ttk.Button" id="add_interest_cancel_button">
+            <property name="command">top.destroy</property>
+            <property name="text" translatable="yes">Cancel</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="add_interest_done_button">
+            <property name="text" translatable="yes">Done</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
               <property name="propagate">True</property>
               <property name="row">0</property>
             </layout>
