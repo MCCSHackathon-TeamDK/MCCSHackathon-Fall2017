@@ -1,9 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <interface>
-  <object class="tk.Frame" id="gift_gud_frame">
+  <object class="ttk.Frame" id="gift_gud_frame">
     <property name="height">200</property>
-    <property name="highlightbackground">#f8ffc7</property>
-    <property name="highlightcolor">#f8ffc7</property>
     <property name="width">200</property>
     <layout>
       <property name="column">0</property>
@@ -11,135 +9,264 @@
       <property name="row">0</property>
     </layout>
     <child>
-      <object class="tk.Label" id="name_label">
-        <property name="text" translatable="yes">name</property>
-        <property name="textvariable">string:name_text</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">0</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Label" id="age_label">
-        <property name="text" translatable="yes">age</property>
-        <property name="textvariable">string:age_text</property>
-        <layout>
-          <property name="column">1</property>
-          <property name="propagate">True</property>
-          <property name="row">0</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Label" id="relationship_label">
-        <property name="text" translatable="yes">relationship</property>
-        <property name="textvariable">string:relationship_text</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">1</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Label" id="interest_label">
-        <property name="text" translatable="yes">Interests</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">3</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Listbox" id="interests_list">
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">4</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Label" id="gifts_to_label">
-        <property name="text" translatable="yes">Gifts To</property>
-        <layout>
-          <property name="column">1</property>
-          <property name="propagate">True</property>
-          <property name="row">3</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Listbox" id="gifts_to_list">
-        <layout>
-          <property name="column">1</property>
-          <property name="propagate">True</property>
-          <property name="row">4</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Label" id="gifts_from_label">
-        <property name="text" translatable="yes">Gifts From</property>
-        <layout>
-          <property name="column">2</property>
-          <property name="propagate">True</property>
-          <property name="row">3</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Listbox" id="gifts_from_list">
-        <layout>
-          <property name="column">2</property>
-          <property name="propagate">True</property>
-          <property name="row">4</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Label" id="family_label">
-        <property name="text" translatable="yes">Family</property>
-        <layout>
-          <property name="column">3</property>
-          <property name="propagate">True</property>
-          <property name="row">3</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Listbox" id="family_list">
-        <layout>
-          <property name="column">3</property>
-          <property name="propagate">True</property>
-          <property name="row">4</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Frame" id="control_buttons_frame">
+      <object class="ttk.Frame" id="name_frame">
         <property name="height">200</property>
         <property name="width">200</property>
         <layout>
-          <property name="column">3</property>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
           <property name="propagate">True</property>
-          <property name="row">5</property>
+          <property name="row">0</property>
+          <property name="sticky">w</property>
         </layout>
         <child>
-          <object class="tk.Button" id="next_button">
-            <property name="text" translatable="yes">Next</property>
+          <object class="ttk.Label" id="name_label">
+            <property name="text" translatable="yes">Name:</property>
             <layout>
-              <property name="column">2</property>
+              <property name="column">0</property>
               <property name="propagate">True</property>
               <property name="row">0</property>
             </layout>
           </object>
         </child>
         <child>
-          <object class="tk.Button" id="previous_button">
+          <object class="ttk.Entry" id="name_entry">
+            <property name="text" translatable="yes">Entry_4</property>
+            <property name="textvariable">string:name_entry_text</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="age_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="columnspan">2</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="age_label">
+            <property name="text" translatable="yes">Age:</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="age_entry">
+            <property name="text" translatable="yes">Entry_5</property>
+            <property name="textvariable">string:age_entry_text</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="relationship_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+          <property name="sticky">w</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="relationship_label">
+            <property name="text" translatable="yes">Relationship:</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="relationship_entry">
+            <property name="text" translatable="yes">Entry_6</property>
+            <property name="textvariable">string:relationship_entry_text</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="interests_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="interest_label">
+            <property name="text" translatable="yes">Interests:</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Listbox" id="interest_listbox">
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="gifts_from_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="gifts_from_label">
+            <property name="text" translatable="yes">Gifts From:</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Listbox" id="gifts_from_listbox">
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="gifts_to_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="gifts_to_label">
+            <property name="text" translatable="yes">Gifts To:</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Listbox" id="gifts_to_listbox">
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="family_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="family_label">
+            <property name="text" translatable="yes">Family:</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Listbox" id="family_listbox">
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="control_buttons_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="columnspan">3</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+          <property name="sticky">e</property>
+        </layout>
+        <child>
+          <object class="ttk.Button" id="save_button">
+            <property name="text" translatable="yes">Save Changes</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="previous_button">
             <property name="text" translatable="yes">Previous</property>
             <layout>
               <property name="column">1</property>
@@ -149,70 +276,10 @@
           </object>
         </child>
         <child>
-          <object class="tk.Button" id="edit_button">
-            <property name="text" translatable="yes">Edit</property>
+          <object class="ttk.Button" id="next_button">
+            <property name="text" translatable="yes">Next</property>
             <layout>
-              <property name="column">0</property>
-              <property name="propagate">True</property>
-              <property name="row">0</property>
-            </layout>
-          </object>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Button" id="find_recipients_button">
-        <property name="text" translatable="yes">Find this Years Recipiants</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">5</property>
-          <property name="sticky">s</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Entry" id="search_entry">
-        <property name="text" translatable="yes">Search</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">6</property>
-          <property name="sticky">s</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Button" id="activate_search">
-        <property name="anchor">w</property>
-        <property name="command">gui_show_person</property>
-        <property name="text" translatable="yes">Button_2</property>
-        <layout>
-          <property name="column">1</property>
-          <property name="propagate">True</property>
-          <property name="row">6</property>
-          <property name="sticky">e</property>
-        </layout>
-      </object>
-    </child>
-  </object>
-  <object class="tk.Toplevel" id="Toplevel_1">
-    <property name="height">200</property>
-    <property name="width">200</property>
-    <child>
-      <object class="tk.Frame" id="name_frame">
-        <property name="height">200</property>
-        <property name="width">200</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">0</property>
-        </layout>
-        <child>
-          <object class="tk.Label" id="name_edit_label">
-            <property name="text" translatable="yes">Label_16</property>
-            <layout>
-              <property name="column">0</property>
+              <property name="column">2</property>
               <property name="propagate">True</property>
               <property name="row">0</property>
             </layout>

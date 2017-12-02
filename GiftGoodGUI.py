@@ -16,6 +16,12 @@ class GiftGudGUI:
         self.people = []
         self.load_people(self.people)
 
+        self.current_person = 0
+        self.edited_interests = []
+        self.edited_gifts_to = []
+        self.edited_gifts_from = []
+        self.edited_family = []
+
         # GUI initialization
 
         root = Tk()
@@ -37,26 +43,44 @@ class GiftGudGUI:
         # file_menu.add_command(label="Add Person", command=self.gui_add_person)
         # file_menu.add_command(label="Add Gift", command=self.gui_add_gift)
 
-        # person
+        self.name_entry = self.builder.get_variable("name_entry_text")
+        self.age_entry = self.builder.get_variable("age_entry_text")
+        self.relationship_entry = self.builder.get_variable("relationship_entry_text")
+        self.interest_list = self.builder.get_object("interest_listbox")
+        self.gifts_to_list = self.builder.get_object("gifts_to_listbox")
+        self.gifts_from_list = self.builder.get_object("gifts_from_listbox")
+        self.family_list = self.builder.get_object("family_listbox")
 
-        self.name_text = self.builder.get_variable("name_text")
-        self.age_text = self.builder.get_variable("age_text")
-        self.relationship_text = self.builder.get_variable("relationship_text")
-        self.interest_list = self.builder.get_object("interests_list")
-        self.gifts_to_list = self.builder.get_object("gifts_to_list")
-        self.gifts_from_list = self.builder.get_object("gifts_from_list")
-        self.family_list = self.builder.get_object("family_list")
-
-        self.edit_button = self.builder.get_object("edit_button")
-        self.edit_button.configure(command=self.gui_edit_object)
+        # Button Configuration
+        self.save_button = self.builder.get_object("save_button")
+        self.save_button.configure(command=self.gui_save_person)
+        self.next_button = self.builder.get_object("next_button")
+        self.next_button.configure(command=self.gui_add_interest)
 
         self.gui_show_person()
 
         root.mainloop()
 
-    def gui_edit_object(self):
-        self.interest_list.insert(END, "ba da boom")
-        pass
+    def gui_save_person(self):
+        """
+        Saves edited information to the person
+        :return: None
+        """
+        person = self.people[self.current_person]
+        person.age = self.age_entry.get()
+        person.name = self.name_entry.get()
+        person.relationship = self.relationship_entry.get()
+        person.interests.extend(self.edited_interests)
+        person.gifts_given.extend(self.edited_gifts_to)
+        person.gifts_received.extend(self.edited_gifts_from)
+        person.family.extend(self.edited_family)
+
+        person.save_person("people")
+
+        self.edited_interests.clear()
+        self.edited_gifts_to.clear()
+        self.edited_gifts_from.clear()
+        self.edited_family.clear()
 
     def gui_add_person(self):
         pass
@@ -65,11 +89,10 @@ class GiftGudGUI:
         pass
 
     def gui_show_person(self):
-        person = self.people[0]
-        self.interest_list.insert(END, "ba da boom")
-        self.name_text.set(person.name)
-        self.age_text.set("Age: " + str(person.age))
-        self.relationship_text.set(person.relationship)
+        person = self.people[self.current_person]
+        self.name_entry.set(person.name)
+        self.age_entry.set(str(person.age))
+        self.relationship_entry.set(person.relationship)
 
         for interest in person.interests:
             self.interest_list.insert(END, interest)
@@ -82,10 +105,18 @@ class GiftGudGUI:
             self.family_list.insert(END, person.name)
 
     def gui_add_gift(self):
+        """
+        Adds a gift to this person. This function is responsible for adding it to their class
+        :return:
+        """
         pass
 
     def gui_edit_gift(self):
         pass
+
+    def gui_add_interest(self):
+        self.interest_list.insert(END, "ba da boom")
+        self.edited_interests.append("ding ding")
 
     def save_people(self, people):
         """

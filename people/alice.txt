@@ -1,1 +1,1 @@
-{"id": 1, "name": "alice", "age": 11, "relationship": "friend", "no_gift_rule": false, "gifts_received": [], "gifts_given": [], "interests": [], "family": []}
+{"name": "alice", "age": "11", "relationship": "friend", "no_gift_rule": false, "gifts_received": [], "gifts_given": [], "interests": ["ding ding"], "family": []}
