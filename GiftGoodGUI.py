@@ -43,15 +43,13 @@ class GiftGudGUI:
         self.age_text = self.builder.get_variable("age_text")
         self.relationship_text = self.builder.get_variable("relationship_text")
         self.interest_list = self.builder.get_object("interests_list")
-        self.gifts_to_list = self.builder.get_object("gifts_given_list")
+        self.gifts_to_list = self.builder.get_object("gifts_to_list")
         self.gifts_from_list = self.builder.get_object("gifts_from_list")
         self.family_list = self.builder.get_object("family_list")
 
-        self.interest_list.insert(END, "ba da boom")
+        self.gui_show_person()
 
         root.mainloop()
-
-        self.gui_show_person(self.people[0])
 
     def gui_add_person(self):
         pass
@@ -59,10 +57,12 @@ class GiftGudGUI:
     def gui_edit_person(self):
         pass
 
-    def gui_show_person(self, person):
-        self.name_text = person.name
-        self.age_text = str(person.age)
-        self.relationship_text = person.relationship
+    def gui_show_person(self):
+        person = self.people[0]
+        self.interest_list.insert(END, "ba da boom")
+        self.name_text.set(person.name)
+        self.age_text.set("Age: " + str(person.age))
+        self.relationship_text.set(person.relationship)
 
         for interest in person.interests:
             self.interest_list.insert(END, interest)
