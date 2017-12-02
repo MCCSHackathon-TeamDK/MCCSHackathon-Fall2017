@@ -50,9 +50,9 @@ class Person:
         """
         self.family.append((role, person))
 
-    def add_gift(self):
+    def add_gift(self, gift):
         """
         Records a gift that this person has given
         :return:
         """
-        pass
+        self.gifts.append(gift)
